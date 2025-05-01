@@ -13,5 +13,5 @@ func main() {
 	if portString == "" {
 		log.Fatal("PORT is not available in the environment.")
 	}
-	fmt.Println(portString)
+	fmt.Println("PORT:", portString)
 }
