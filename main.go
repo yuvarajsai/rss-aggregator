@@ -37,6 +37,7 @@ func main() {
 	v1Router.HandleFunc("/healthz", handlerReadiness)
 
 	router.Mount("/v1", v1Router)
+	// now http://localhost:8000/v1/healthz would return {} with 200 status code.
 
 	srv := &http.Server{
 		Handler: router,
