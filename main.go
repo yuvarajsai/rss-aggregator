@@ -34,10 +34,12 @@ func main() {
 	}))
 
 	v1Router := chi.NewRouter()
-	v1Router.HandleFunc("/healthz", handlerReadiness)
+	v1Router.Get("/healthz", handlerReadiness)
+	v1Router.Get("/err", handlerError)
 
 	router.Mount("/v1", v1Router)
-	// now http://localhost:8000/v1/healthz would return {} with 200 status code.
+	// now GET http://localhost:8000/v1/healthz would return {} with 200 status code.
+	// POST or any other method, would fail with 405 method not allowed error.
 
 	srv := &http.Server{
 		Handler: router,
