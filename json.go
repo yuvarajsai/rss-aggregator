@@ -16,8 +16,11 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		w.WriteHeader(500)
 		return
 	}
+	// Adding a new header.
 	w.Header().Add("Content-Type", "application/json")
+	// Writes status code into header.
 	w.WriteHeader(code)
+	// Writes the response.
 	w.Write(data)
 }
 
