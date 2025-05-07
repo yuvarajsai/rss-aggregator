@@ -52,3 +52,19 @@ go mod vendor
 - The `vendor` directory ensures dependencies are locally available for builds and offline use.
 - Running `go mod vendor` ensures the package files are fetched and stored locally in the `vendor` directory.
 - Note: The `vendor` directory is typically used in projects where dependencies need to be bundled for offline use or to ensure consistent builds.
+
+## Install sqlc (lightweight ORM)
+
+- sqlc generates fully type-safe idiomatic Go code from SQL
+
+```bash
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+```
+
+## Install goose
+
+- goose is a database migration tool. Manage your database schema by creating incremental SQL changes and/or Go functions.
+
+```bash
+go install github.com/pressly/goose/v3/cmd/goose@latest
+```
